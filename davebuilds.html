@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<title>DaveBuilds — The Story Behind Every Project | Dave Hennit</title>
+<meta name="description" content="DaveBuilds is where Dave Hennit tells the complete story behind every finished project — the idea, the planning, the design, the build, and what came out of it.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1115'/%3E%3Ccircle cx='9' cy='16' r='2.4' fill='%234C8DFF'/%3E%3Ccircle cx='23' cy='9' r='2.4' fill='%23C2B8FF'/%3E%3Ccircle cx='23' cy='23' r='2.4' fill='%234C8DFF'/%3E%3Cpath d='M9 16L23 9M9 16L23 23' stroke='%238A93A0' stroke-width='1.4'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="portfolio-tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="nav" id="site-nav">
+  <div class="nav-inner container">
+    <a class="nav-logo" href="index.html#home" aria-label="Dave Hennit — home">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--portfolio-color-surface-container-lowest)"/>
+        <circle cx="9" cy="16" r="2.4" fill="var(--portfolio-color-primary)"/>
+        <circle cx="23" cy="9" r="2.4" fill="var(--portfolio-color-tertiary)"/>
+        <circle cx="23" cy="23" r="2.4" fill="var(--portfolio-color-primary)"/>
+        <path d="M9 16L23 9M9 16L23 23" stroke="var(--portfolio-color-outline)" stroke-width="1.4"/>
+      </svg>
+      <span>Dave Hennit</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="index.html#home">Home</a>
+      <a class="nav-link" href="index.html#projects">Projects</a>
+      <a class="nav-link active" href="davebuilds.html" aria-current="page">DaveBuilds</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn nav-menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="davebuilds.html" class="active" aria-current="page">DaveBuilds</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ DAVEBUILDS INTRO ============ -->
+  <section class="page-intro">
+    <div class="gradient-blob gradient-blob-davebuilds" aria-hidden="true"></div>
+    <div class="container page-intro-content">
+      <p class="eyebrow enter">// DaveBuilds</p>
+      <h1 class="page-intro-heading enter" style="transition-delay:80ms">The story behind every build.</h1>
+      <p class="page-intro-sub enter" style="transition-delay:160ms">
+        Every finished project in <a class="inline-link" href="index.html#projects">Projects</a> has a home here —
+        the idea, the planning, the design decisions, how it was actually built, what broke along the way,
+        and what shipped in the end. Not a blog. Not a feed. The complete story behind the work, one project at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ STORY GRID ============ -->
+  <section class="stories">
+    <div class="container">
+      <div class="story-grid" id="story-grid">
+        <!-- Rendered by davebuilds.js from the PROJECTS array in data.js -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-identity">
+      <p class="footer-name">Dave Hennit</p>
+      <p class="footer-legal">Enitan Oluwaseun David</p>
+      <p class="footer-tagline">✨ Thoughtfully designed by Dave Hennit</p>
+    </div>
+    <div class="footer-meta">
+      <p>&copy; <span id="year"></span> Dave Hennit.</p>
+      <button class="footer-top" type="button">Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="davebuilds.js"></script>
+</body>
+</html>

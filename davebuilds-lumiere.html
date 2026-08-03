@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<title>Designing Lumière — DaveBuilds | Dave Hennit</title>
+<meta name="description" content="The complete story behind Lumière: a no-code brand and landing page freestyle built in Framer, including the gaps an honest second look turned up.">
+
+<!--
+  Built from the reusable story template (see davebuilds-portfolio.html).
+  To document a new finished project: duplicate that file, rename it
+  davebuilds-<slug>.html, rewrite the 9 sections + header + links,
+  then point that project's "storyUrl" in data.js at the new filename.
+-->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1115'/%3E%3Ccircle cx='9' cy='16' r='2.4' fill='%234C8DFF'/%3E%3Ccircle cx='23' cy='9' r='2.4' fill='%23C2B8FF'/%3E%3Ccircle cx='23' cy='23' r='2.4' fill='%234C8DFF'/%3E%3Cpath d='M9 16L23 9M9 16L23 23' stroke='%238A93A0' stroke-width='1.4'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="portfolio-tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#story-main">Skip to content</a>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<header class="nav" id="site-nav">
+  <div class="nav-inner container">
+    <a class="nav-logo" href="index.html#home" aria-label="Dave Hennit — home">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--portfolio-color-surface-container-lowest)"/>
+        <circle cx="9" cy="16" r="2.4" fill="var(--portfolio-color-primary)"/>
+        <circle cx="23" cy="9" r="2.4" fill="var(--portfolio-color-tertiary)"/>
+        <circle cx="23" cy="23" r="2.4" fill="var(--portfolio-color-primary)"/>
+        <path d="M9 16L23 9M9 16L23 23" stroke="var(--portfolio-color-outline)" stroke-width="1.4"/>
+      </svg>
+      <span>Dave Hennit</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="index.html#home">Home</a>
+      <a class="nav-link" href="index.html#projects">Projects</a>
+      <a class="nav-link active" href="davebuilds.html" aria-current="page">DaveBuilds</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.5M12 19v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2.5 12H5M19 12h2.5M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn nav-menu-btn" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="davebuilds.html" class="active" aria-current="page">DaveBuilds</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="story-main">
+
+  <!-- ============ STORY HEADER ============ -->
+  <header class="story-header container">
+    <p class="eyebrow">// DaveBuilds</p>
+    <h1 class="story-title">Designing Lumière</h1>
+    <p class="story-dek">
+      A freestyle brand and landing-page concept for a luxury beauty and jewelry label, built
+      entirely in Framer — no code, no backend, just visual design. Including the honest gaps a
+      second look turned up.
+    </p>
+    <div class="story-meta">
+      <span>Completed July 15, 2026</span>
+      <span class="meta-sep">·</span>
+      <span>6 min read</span>
+    </div>
+  </header>
+
+  <div class="story-cover">
+    <img src="assets/lumiere/hero.png" alt="Lumière landing page hero section — 'Beauty Crafted for You' headline beside a lifestyle photo" loading="lazy">
+  </div>
+
+  <div class="container story-layout">
+
+    <!-- ============ TABLE OF CONTENTS ============ -->
+    <aside class="story-toc" aria-label="Table of contents">
+      <button class="toc-toggle" type="button" aria-expanded="false">
+        Contents
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="toc-label">On this page</p>
+      <ul>
+        <li><a href="#overview" data-toc>Project Overview</a></li>
+        <li><a href="#idea" data-toc>The Idea</a></li>
+        <li><a href="#planning" data-toc>Planning</a></li>
+        <li><a href="#design" data-toc>Design</a></li>
+        <li><a href="#development" data-toc>Development</a></li>
+        <li><a href="#challenges" data-toc>Challenges</a></li>
+        <li><a href="#outcome" data-toc>Final Outcome</a></li>
+        <li><a href="#reflections" data-toc>Reflections</a></li>
+        <li><a href="#tech" data-toc>Technologies Used</a></li>
+        <li><a href="#links" data-toc>Links</a></li>
+      </ul>
+    </aside>
+
+    <!-- ============ STORY CONTENT ============ -->
+    <article class="story-content">
+
+      <section id="overview" class="story-section">
+        <h2>Project Overview</h2>
+        <p>
+          Lumière is a brand concept for a luxury beauty and jewelry label — artisan lipsticks and
+          handcrafted jewelry, positioned as "beauty is an art form." It's a single landing page:
+          a hero, a founder's-story section, two collection cards, and three brand-promise points.
+          There's no code behind it — it's built entirely in Framer's visual canvas.
+        </p>
+      </section>
+
+      <section id="idea" class="story-section">
+        <h2>The Idea</h2>
+        <p>
+          FinTrack and TaskFlow are both engineering-first projects — the interesting decisions were
+          in the data model and the API. Lumière was the opposite on purpose: no backend, no auth,
+          nothing to architect. I wanted a project where the only decisions were visual — brand
+          voice, typography, color, photography — and a luxury beauty/jewelry concept is about as
+          photography- and type-driven as a domain gets, which made it a good stress test for
+          design judgment alone, with no engineering to hide behind.
+        </p>
+      </section>
+
+      <section id="planning" class="story-section">
+        <h2>Planning</h2>
+        <p>
+          I named the brand before designing anything — "Lumière," French for light, which set the
+          tone for everything after: soft, warm, a little precious. Then I planned the section flow
+          on paper before opening Framer: Hero, Our Story, Our Collections, a three-point brand
+          promise, Footer — the standard shape of a luxury ecommerce landing page, chosen
+          deliberately rather than improvised section-by-section.
+        </p>
+        <p>
+          I also picked the palette and type pairing before laying out a single section: a blush
+          family (<code>#fdf0ee</code>, <code>#faf7f5</code>) with a dusty-rose accent
+          (<code>#c0617a</code>) against a near-black plum (<code>#2a1a1e</code>), paired with
+          Cormorant for headlines and Inter for everything else.
+        </p>
+      </section>
+
+      <section id="design" class="story-section">
+        <h2>Design</h2>
+        <p>
+          Cormorant carries every headline — "Beauty Crafted for You," "Our Collections" — because
+          an italic serif reads as editorial and luxury in a way a geometric sans never would for
+          this brand. Inter handles the nav, body copy, and buttons, so the elegance stays in the
+          headlines instead of fighting for attention everywhere at once.
+        </p>
+        <p>
+          The collection cards lean entirely on product photography rather than icon-and-copy
+          blocks — lipsticks staged on raw crystal, jewelry laid across an open book — because for
+          this brand the photography has to do the persuading, not the layout:
+        </p>
+        <div class="story-image">
+          <img src="assets/lumiere/collections.png" alt="Lumière 'Our Collections' section showing the Lip Collection and Jewelry Collection product photography cards" loading="lazy">
+        </div>
+      </section>
+
+      <section id="development" class="story-section">
+        <h2>Development</h2>
+        <p>
+          "Development" here means Framer's visual canvas, not a code editor. Even without writing
+          code, I structured the page the way I'd structure a coded one — named, nested layers for
+          Hero, Hero Text, Hero Image, Collections Grid, Lip Collection Card, Jewelry Collection
+          Card, Features Row, and so on — so the page stays editable months later instead of
+          becoming a flat pile of shapes with no structure to reason about.
+        </p>
+      </section>
+
+      <section id="challenges" class="story-section">
+        <h2>Challenges</h2>
+        <p>
+          Honestly: I designed this at a single desktop width and never went back to configure a
+          mobile or tablet breakpoint. The page currently ships with a fixed 1200px viewport instead
+          of one that adapts, which means on a phone right now it renders as a shrunk-down desktop
+          layout instead of a real mobile layout. That's a real gap, not a stylistic choice — a
+          breakpoint should have been part of the plan from the start, not a follow-up step.
+        </p>
+        <p>
+          The other thing a second look turned up: there are only three images on the entire page.
+          For a domain where photography is supposed to be doing most of the persuading, that's
+          thin — the ones that exist are well art-directed, but a real version of this brand needs
+          more of them, not just better-composed versions of the same three.
+        </p>
+      </section>
+
+      <section id="outcome" class="story-section">
+        <h2>Final Outcome</h2>
+        <p>
+          Lumière shipped as a polished, single-page brand concept, live on Framer's hosting. It
+          reads as a real luxury beauty and jewelry site at a glance — the palette, typography, and
+          photography hold together — but it's a concept, not a store: two named products, no
+          product grid, no cart, and, as of writing, no mobile layout.
+        </p>
+      </section>
+
+      <section id="reflections" class="story-section">
+        <h2>Reflections</h2>
+        <p>
+          The biggest lesson was how much of "looks expensive" comes from restraint rather than
+          more elements — one accent color, one serif reserved for headlines only, three genuinely
+          well-chosen photos doing more work than a dozen mediocre ones would have.
+        </p>
+        <p>
+          The clearer lesson was about process, not visuals: a responsive breakpoint isn't a
+          finishing touch to add once everything "looks done" — it has to be part of the plan from
+          the first section, the same way I'd plan a database schema before writing a route. Next
+          on this one: configure the mobile breakpoint, add more product and lifestyle photography,
+          and collapse "Collections," "Jewelry," and "Beauty" in the nav into a clearer hierarchy
+          instead of three same-level links.
+        </p>
+      </section>
+
+      <section id="tech" class="story-section">
+        <h2>Technologies Used</h2>
+        <div class="project-tags story-tech-tags">
+          <span>Framer</span>
+        </div>
+      </section>
+
+      <section id="links" class="story-section">
+        <h2>Links</h2>
+        <div class="story-links">
+          <a class="btn btn-primary" href="https://happier-shortbread-762754.framer.app/" target="_blank" rel="noopener">Live Demo</a>
+          <a class="btn btn-ghost" href="davebuilds.html">← DaveBuilds Landing Page</a>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-identity">
+      <p class="footer-name">Dave Hennit</p>
+      <p class="footer-legal">Enitan Oluwaseun David</p>
+      <p class="footer-tagline">✨ Thoughtfully designed by Dave Hennit</p>
+    </div>
+    <div class="footer-meta">
+      <p>&copy; <span id="year"></span> Dave Hennit.</p>
+      <button class="footer-top" type="button">Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="story.js"></script>
+</body>
+</html>

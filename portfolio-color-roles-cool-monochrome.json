@@ -1,0 +1,113 @@
+{
+  "$description": "M3 color roles for cool monochrome portfolio (product UI/UX designer, vibecoder). Seed colors: #0F1115, #3A3F47, #8A93A0, #DCE1E8 (neutral) + #4C8DFF (accent). Dark is the recommended default theme.",
+  "portfolio": {
+    "color": {
+      "dark": {
+        "$description": "Default theme",
+        "primary": {
+          "primary": { "$type": "color", "$value": "#4C8DFF", "$description": "Source accent color. CTA buttons, links, active nav state, focus highlights" },
+          "on-primary": { "$type": "color", "$value": "#081C44", "$description": "Text/icons on filled primary buttons. Darkened from #0B2A5C on 2026-08-03 — WCAG audit found the original at 4.37:1 against primary, just under the 4.5:1 AA text minimum; this hits 5.21:1." },
+          "primary-container": { "$type": "color", "$value": "#1E4488", "$description": "Secondary emphasis buttons, selected states" },
+          "on-primary-container": { "$type": "color", "$value": "#D9E6FF", "$description": "Text/icons on primary-container" }
+        },
+        "secondary": {
+          "secondary": { "$type": "color", "$value": "#B9C4D4", "$description": "Muted slate-blue. Secondary buttons, filter chips" },
+          "on-secondary": { "$type": "color", "$value": "#283542", "$description": "Text/icons on filled secondary elements" },
+          "secondary-container": { "$type": "color", "$value": "#3E4A59", "$description": "Tag/pill backgrounds, nav item hover" },
+          "on-secondary-container": { "$type": "color", "$value": "#DAE2ED", "$description": "Text/icons on secondary-container" }
+        },
+        "tertiary": {
+          "tertiary": { "$type": "color", "$value": "#C2B8FF", "$description": "Violet-blue accent. Code block highlights, badges, tags that need to stand apart from primary" },
+          "on-tertiary": { "$type": "color", "$value": "#33266E", "$description": "Text/icons on filled tertiary elements" },
+          "tertiary-container": { "$type": "color", "$value": "#4A3B96", "$description": "Highlight blocks, pull-quotes" },
+          "on-tertiary-container": { "$type": "color", "$value": "#E4DFFC", "$description": "Text/icons on tertiary-container" }
+        },
+        "error": {
+          "error": { "$type": "color", "$value": "#F2B8B5", "$description": "Form validation, broken-link states" },
+          "on-error": { "$type": "color", "$value": "#601410", "$description": "Text/icons on filled error elements" },
+          "error-container": { "$type": "color", "$value": "#8C1D18", "$description": "Error banners" },
+          "on-error-container": { "$type": "color", "$value": "#F9DEDC", "$description": "Text/icons on error-container" }
+        },
+        "surface": {
+          "surface-dim": { "$type": "color", "$value": "#0F1115", "$description": "Source neutral (darkest). Dimmest page background, e.g. hero section" },
+          "surface": { "$type": "color", "$value": "#17191D", "$description": "Default page background" },
+          "surface-bright": { "$type": "color", "$value": "#3A3F47", "$description": "Source neutral (mid-dark). Brightest surface, used sparingly (modals, popovers)" },
+          "surface-container-lowest": { "$type": "color", "$value": "#0A0B0E", "$description": "Recessed areas, code editor background" },
+          "surface-container-low": { "$type": "color", "$value": "#17191D", "$description": "Section backgrounds" },
+          "surface-container": { "$type": "color", "$value": "#1D2025", "$description": "Project cards" },
+          "surface-container-high": { "$type": "color", "$value": "#282B31", "$description": "Card hover state, nav bar" },
+          "surface-container-highest": { "$type": "color", "$value": "#333840", "$description": "Active/pressed card state" },
+          "on-surface": { "$type": "color", "$value": "#E3E5E9", "$description": "Primary body text, headings" },
+          "on-surface-variant": { "$type": "color", "$value": "#B4BAC5", "$description": "Secondary text, captions, metadata" }
+        },
+        "outline": {
+          "outline": { "$type": "color", "$value": "#8A93A0", "$description": "Source neutral (mid-gray). Input borders, dividers between major sections" },
+          "outline-variant": { "$type": "color", "$value": "#3A3F47", "$description": "Source neutral (mid-dark). Subtle card borders, table rules" }
+        },
+        "inverse": {
+          "inverse-surface": { "$type": "color", "$value": "#E3E5E9", "$description": "Tooltips, snackbars/toasts on a dark page" },
+          "inverse-on-surface": { "$type": "color", "$value": "#2B2F36", "$description": "Text on inverse-surface" },
+          "inverse-primary": { "$type": "color", "$value": "#2F6FE0", "$description": "Primary-colored elements shown on an inverse (light) surface" }
+        },
+        "utility": {
+          "surface-tint": { "$type": "color", "$value": "{portfolio.color.dark.primary.primary}", "$description": "Elevation tint overlay (= primary)" },
+          "shadow": { "$type": "color", "$value": "#000000", "$description": "Drop shadows" },
+          "scrim": { "$type": "color", "$value": "#000000", "$description": "Modal/overlay backdrop" }
+        }
+      },
+      "light": {
+        "$description": "Alternate theme",
+        "primary": {
+          "primary": { "$type": "color", "$value": "#2F6FE0", "$description": "Deepened accent for AA contrast on white" },
+          "on-primary": { "$type": "color", "$value": "#FFFFFF", "$description": "Text/icons on filled primary buttons" },
+          "primary-container": { "$type": "color", "$value": "#D9E6FF", "$description": "Secondary emphasis buttons, selected states" },
+          "on-primary-container": { "$type": "color", "$value": "#0B2A5C", "$description": "Text/icons on primary-container" }
+        },
+        "secondary": {
+          "secondary": { "$type": "color", "$value": "#56606F", "$description": "Secondary buttons, filter chips" },
+          "on-secondary": { "$type": "color", "$value": "#FFFFFF", "$description": "Text/icons on filled secondary elements" },
+          "secondary-container": { "$type": "color", "$value": "#DAE2ED", "$description": "Tag/pill backgrounds" },
+          "on-secondary-container": { "$type": "color", "$value": "#17212E", "$description": "Text/icons on secondary-container" }
+        },
+        "tertiary": {
+          "tertiary": { "$type": "color", "$value": "#6C5CE0", "$description": "Code block highlights, badges, tags" },
+          "on-tertiary": { "$type": "color", "$value": "#FFFFFF", "$description": "Text/icons on filled tertiary elements" },
+          "tertiary-container": { "$type": "color", "$value": "#E4DFFC", "$description": "Highlight blocks, pull-quotes" },
+          "on-tertiary-container": { "$type": "color", "$value": "#1F1852", "$description": "Text/icons on tertiary-container" }
+        },
+        "error": {
+          "error": { "$type": "color", "$value": "#B3261E", "$description": "Form validation, broken-link states" },
+          "on-error": { "$type": "color", "$value": "#FFFFFF", "$description": "Text/icons on filled error elements" },
+          "error-container": { "$type": "color", "$value": "#F9DEDC", "$description": "Error banners" },
+          "on-error-container": { "$type": "color", "$value": "#410E0B", "$description": "Text/icons on error-container" }
+        },
+        "surface": {
+          "surface-dim": { "$type": "color", "$value": "#D9DDE3", "$description": "Dimmest surface" },
+          "surface": { "$type": "color", "$value": "#F7F8FA", "$description": "Default page background" },
+          "surface-bright": { "$type": "color", "$value": "#F7F8FA", "$description": "Brightest surface" },
+          "surface-container-lowest": { "$type": "color", "$value": "#FFFFFF", "$description": "Recessed areas, code blocks" },
+          "surface-container-low": { "$type": "color", "$value": "#F1F2F5", "$description": "Section backgrounds" },
+          "surface-container": { "$type": "color", "$value": "#ECEEF1", "$description": "Project cards" },
+          "surface-container-high": { "$type": "color", "$value": "#E6E8EC", "$description": "Card hover state, nav bar" },
+          "surface-container-highest": { "$type": "color", "$value": "#E0E3E7", "$description": "Active/pressed card state" },
+          "on-surface": { "$type": "color", "$value": "#191C21", "$description": "Primary body text, headings" },
+          "on-surface-variant": { "$type": "color", "$value": "#3A3F47", "$description": "Source neutral (mid-dark). Secondary text, captions" }
+        },
+        "outline": {
+          "outline": { "$type": "color", "$value": "#72798A", "$description": "Input borders, dividers" },
+          "outline-variant": { "$type": "color", "$value": "#C3C8D1", "$description": "Subtle card borders, table rules" }
+        },
+        "inverse": {
+          "inverse-surface": { "$type": "color", "$value": "#2B2F36", "$description": "Tooltips, toasts on a light page" },
+          "inverse-on-surface": { "$type": "color", "$value": "#F1F2F5", "$description": "Text on inverse-surface" },
+          "inverse-primary": { "$type": "color", "$value": "#A9C5FF", "$description": "Primary-colored elements on an inverse (dark) surface" }
+        },
+        "utility": {
+          "surface-tint": { "$type": "color", "$value": "{portfolio.color.light.primary.primary}", "$description": "Elevation tint overlay (= primary)" },
+          "shadow": { "$type": "color", "$value": "#000000", "$description": "Drop shadows" },
+          "scrim": { "$type": "color", "$value": "#000000", "$description": "Modal/overlay backdrop" }
+        }
+      }
+    }
+  }
+}

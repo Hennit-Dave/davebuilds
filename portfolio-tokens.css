@@ -1,0 +1,323 @@
+/**
+ * Portfolio Design Tokens CSS
+ * Auto-generated from portfolio-color-roles-cool-monochrome.json and portfolio-typography-tokens.json
+ */
+
+/* ==========================================================================
+   Root Tokens (Dark Theme Default & Typography)
+   ========================================================================== */
+:root,
+[data-theme="dark"] {
+  /* Typography Reference Tokens */
+  --portfolio-font-family-mono: 'JetBrains Mono', monospace;
+  --portfolio-font-family-sans: Inter, sans-serif;
+  --portfolio-font-weight-regular: 400;
+  --portfolio-font-weight-medium: 500;
+
+  /* Typography System Tokens */
+  /* display-large - Hero headline on homepage / landing */
+  --portfolio-typography-display-large-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-display-large-font-weight: 400;
+  --portfolio-typography-display-large-font-size: 57px;
+  --portfolio-typography-display-large-line-height: 64px;
+  --portfolio-typography-display-large-letter-spacing: 0px;
+
+  /* display-medium - Section-opening headline, e.g. 'Selected work' */
+  --portfolio-typography-display-medium-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-display-medium-font-weight: 400;
+  --portfolio-typography-display-medium-font-size: 45px;
+  --portfolio-typography-display-medium-line-height: 52px;
+  --portfolio-typography-display-medium-letter-spacing: 0px;
+
+  /* display-small - Project case study page title */
+  --portfolio-typography-display-small-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-display-small-font-weight: 400;
+  --portfolio-typography-display-small-font-size: 36px;
+  --portfolio-typography-display-small-line-height: 44px;
+  --portfolio-typography-display-small-letter-spacing: 0px;
+
+  /* headline-large - Major section heading */
+  --portfolio-typography-headline-large-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-headline-large-font-weight: 400;
+  --portfolio-typography-headline-large-font-size: 32px;
+  --portfolio-typography-headline-large-line-height: 40px;
+  --portfolio-typography-headline-large-letter-spacing: 0px;
+
+  /* headline-medium - Sub-section heading within a case study */
+  --portfolio-typography-headline-medium-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-headline-medium-font-weight: 400;
+  --portfolio-typography-headline-medium-font-size: 28px;
+  --portfolio-typography-headline-medium-line-height: 36px;
+  --portfolio-typography-headline-medium-letter-spacing: 0px;
+
+  /* headline-small - Card or module heading, e.g. project card title */
+  --portfolio-typography-headline-small-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-headline-small-font-weight: 400;
+  --portfolio-typography-headline-small-font-size: 24px;
+  --portfolio-typography-headline-small-line-height: 32px;
+  --portfolio-typography-headline-small-letter-spacing: 0px;
+
+  /* title-large - Emphasized inline heading, pull-quote lead-in */
+  --portfolio-typography-title-large-font-family: 'JetBrains Mono', monospace;
+  --portfolio-typography-title-large-font-weight: 400;
+  --portfolio-typography-title-large-font-size: 22px;
+  --portfolio-typography-title-large-line-height: 28px;
+  --portfolio-typography-title-large-letter-spacing: 0px;
+
+  /* title-medium - Nav labels, form section titles */
+  --portfolio-typography-title-medium-font-family: Inter, sans-serif;
+  --portfolio-typography-title-medium-font-weight: 500;
+  --portfolio-typography-title-medium-font-size: 16px;
+  --portfolio-typography-title-medium-line-height: 24px;
+  --portfolio-typography-title-medium-letter-spacing: 0.15px;
+
+  /* title-small - Card sub-titles, list headers */
+  --portfolio-typography-title-small-font-family: Inter, sans-serif;
+  --portfolio-typography-title-small-font-weight: 500;
+  --portfolio-typography-title-small-font-size: 14px;
+  --portfolio-typography-title-small-line-height: 20px;
+  --portfolio-typography-title-small-letter-spacing: 0.1px;
+
+  /* body-large - Primary paragraph text, case study body copy */
+  --portfolio-typography-body-large-font-family: Inter, sans-serif;
+  --portfolio-typography-body-large-font-weight: 400;
+  --portfolio-typography-body-large-font-size: 16px;
+  --portfolio-typography-body-large-line-height: 24px;
+  --portfolio-typography-body-large-letter-spacing: 0.5px;
+
+  /* body-medium - Secondary paragraph text, captions */
+  --portfolio-typography-body-medium-font-family: Inter, sans-serif;
+  --portfolio-typography-body-medium-font-weight: 400;
+  --portfolio-typography-body-medium-font-size: 14px;
+  --portfolio-typography-body-medium-line-height: 20px;
+  --portfolio-typography-body-medium-letter-spacing: 0.25px;
+
+  /* body-small - Footnotes, metadata, fine print */
+  --portfolio-typography-body-small-font-family: Inter, sans-serif;
+  --portfolio-typography-body-small-font-weight: 400;
+  --portfolio-typography-body-small-font-size: 12px;
+  --portfolio-typography-body-small-line-height: 16px;
+  --portfolio-typography-body-small-letter-spacing: 0.4px;
+
+  /* label-large - Button labels, tab labels */
+  --portfolio-typography-label-large-font-family: Inter, sans-serif;
+  --portfolio-typography-label-large-font-weight: 500;
+  --portfolio-typography-label-large-font-size: 14px;
+  --portfolio-typography-label-large-line-height: 20px;
+  --portfolio-typography-label-large-letter-spacing: 0.1px;
+
+  /* label-medium - Tags, badges, small buttons */
+  --portfolio-typography-label-medium-font-family: Inter, sans-serif;
+  --portfolio-typography-label-medium-font-weight: 500;
+  --portfolio-typography-label-medium-font-size: 12px;
+  --portfolio-typography-label-medium-line-height: 16px;
+  --portfolio-typography-label-medium-letter-spacing: 0.5px;
+
+  /* label-small - Timestamps, micro-labels */
+  --portfolio-typography-label-small-font-family: Inter, sans-serif;
+  --portfolio-typography-label-small-font-weight: 500;
+  --portfolio-typography-label-small-font-size: 11px;
+  --portfolio-typography-label-small-line-height: 16px;
+  --portfolio-typography-label-small-letter-spacing: 0.5px;
+
+
+  /* Dark Theme Color Roles (Default) */
+  --portfolio-color-primary: #4C8DFF; /* Source accent color. CTA buttons, links, active nav state, focus highlights */
+  --portfolio-color-on-primary: #081C44; /* Text/icons on filled primary buttons. Darkened from #0B2A5C on 2026-08-03 — WCAG audit found the original at 4.37:1 against primary, just under the 4.5:1 AA text minimum; this hits 5.21:1. */
+  --portfolio-color-primary-container: #1E4488; /* Secondary emphasis buttons, selected states */
+  --portfolio-color-on-primary-container: #D9E6FF; /* Text/icons on primary-container */
+  --portfolio-color-secondary: #B9C4D4; /* Muted slate-blue. Secondary buttons, filter chips */
+  --portfolio-color-on-secondary: #283542; /* Text/icons on filled secondary elements */
+  --portfolio-color-secondary-container: #3E4A59; /* Tag/pill backgrounds, nav item hover */
+  --portfolio-color-on-secondary-container: #DAE2ED; /* Text/icons on secondary-container */
+  --portfolio-color-tertiary: #C2B8FF; /* Violet-blue accent. Code block highlights, badges, tags that need to stand apart from primary */
+  --portfolio-color-on-tertiary: #33266E; /* Text/icons on filled tertiary elements */
+  --portfolio-color-tertiary-container: #4A3B96; /* Highlight blocks, pull-quotes */
+  --portfolio-color-on-tertiary-container: #E4DFFC; /* Text/icons on tertiary-container */
+  --portfolio-color-error: #F2B8B5; /* Form validation, broken-link states */
+  --portfolio-color-on-error: #601410; /* Text/icons on filled error elements */
+  --portfolio-color-error-container: #8C1D18; /* Error banners */
+  --portfolio-color-on-error-container: #F9DEDC; /* Text/icons on error-container */
+  --portfolio-color-surface-dim: #0F1115; /* Source neutral (darkest). Dimmest page background, e.g. hero section */
+  --portfolio-color-surface: #17191D; /* Default page background */
+  --portfolio-color-surface-bright: #3A3F47; /* Source neutral (mid-dark). Brightest surface, used sparingly (modals, popovers) */
+  --portfolio-color-surface-container-lowest: #0A0B0E; /* Recessed areas, code editor background */
+  --portfolio-color-surface-container-low: #17191D; /* Section backgrounds */
+  --portfolio-color-surface-container: #1D2025; /* Project cards */
+  --portfolio-color-surface-container-high: #282B31; /* Card hover state, nav bar */
+  --portfolio-color-surface-container-highest: #333840; /* Active/pressed card state */
+  --portfolio-color-on-surface: #E3E5E9; /* Primary body text, headings */
+  --portfolio-color-on-surface-variant: #B4BAC5; /* Secondary text, captions, metadata */
+  --portfolio-color-outline: #8A93A0; /* Source neutral (mid-gray). Input borders, dividers between major sections */
+  --portfolio-color-outline-variant: #3A3F47; /* Source neutral (mid-dark). Subtle card borders, table rules */
+  --portfolio-color-inverse-surface: #E3E5E9; /* Tooltips, snackbars/toasts on a dark page */
+  --portfolio-color-inverse-on-surface: #2B2F36; /* Text on inverse-surface */
+  --portfolio-color-inverse-primary: #2F6FE0; /* Primary-colored elements shown on an inverse (light) surface */
+  --portfolio-color-surface-tint: #4C8DFF; /* Elevation tint overlay (= primary) */
+  --portfolio-color-shadow: #000000; /* Drop shadows */
+  --portfolio-color-scrim: #000000; /* Modal/overlay backdrop */
+}
+
+/* ==========================================================================
+   Light Theme Color Roles
+   ========================================================================== */
+[data-theme="light"],
+.theme-light {
+  --portfolio-color-primary: #2F6FE0; /* Deepened accent for AA contrast on white */
+  --portfolio-color-on-primary: #FFFFFF; /* Text/icons on filled primary buttons */
+  --portfolio-color-primary-container: #D9E6FF; /* Secondary emphasis buttons, selected states */
+  --portfolio-color-on-primary-container: #0B2A5C; /* Text/icons on primary-container */
+  --portfolio-color-secondary: #56606F; /* Secondary buttons, filter chips */
+  --portfolio-color-on-secondary: #FFFFFF; /* Text/icons on filled secondary elements */
+  --portfolio-color-secondary-container: #DAE2ED; /* Tag/pill backgrounds */
+  --portfolio-color-on-secondary-container: #17212E; /* Text/icons on secondary-container */
+  --portfolio-color-tertiary: #6C5CE0; /* Code block highlights, badges, tags */
+  --portfolio-color-on-tertiary: #FFFFFF; /* Text/icons on filled tertiary elements */
+  --portfolio-color-tertiary-container: #E4DFFC; /* Highlight blocks, pull-quotes */
+  --portfolio-color-on-tertiary-container: #1F1852; /* Text/icons on tertiary-container */
+  --portfolio-color-error: #B3261E; /* Form validation, broken-link states */
+  --portfolio-color-on-error: #FFFFFF; /* Text/icons on filled error elements */
+  --portfolio-color-error-container: #F9DEDC; /* Error banners */
+  --portfolio-color-on-error-container: #410E0B; /* Text/icons on error-container */
+  --portfolio-color-surface-dim: #D9DDE3; /* Dimmest surface */
+  --portfolio-color-surface: #F7F8FA; /* Default page background */
+  --portfolio-color-surface-bright: #F7F8FA; /* Brightest surface */
+  --portfolio-color-surface-container-lowest: #FFFFFF; /* Recessed areas, code blocks */
+  --portfolio-color-surface-container-low: #F1F2F5; /* Section backgrounds */
+  --portfolio-color-surface-container: #ECEEF1; /* Project cards */
+  --portfolio-color-surface-container-high: #E6E8EC; /* Card hover state, nav bar */
+  --portfolio-color-surface-container-highest: #E0E3E7; /* Active/pressed card state */
+  --portfolio-color-on-surface: #191C21; /* Primary body text, headings */
+  --portfolio-color-on-surface-variant: #3A3F47; /* Source neutral (mid-dark). Secondary text, captions */
+  --portfolio-color-outline: #72798A; /* Input borders, dividers */
+  --portfolio-color-outline-variant: #C3C8D1; /* Subtle card borders, table rules */
+  --portfolio-color-inverse-surface: #2B2F36; /* Tooltips, toasts on a light page */
+  --portfolio-color-inverse-on-surface: #F1F2F5; /* Text on inverse-surface */
+  --portfolio-color-inverse-primary: #A9C5FF; /* Primary-colored elements on an inverse (dark) surface */
+  --portfolio-color-surface-tint: #2F6FE0; /* Elevation tint overlay (= primary) */
+  --portfolio-color-shadow: #000000; /* Drop shadows */
+  --portfolio-color-scrim: #000000; /* Modal/overlay backdrop */
+}
+
+/* ==========================================================================
+   Typography Utility Classes
+   ========================================================================== */
+.text-display-large {
+  font-family: var(--portfolio-typography-display-large-font-family);
+  font-weight: var(--portfolio-typography-display-large-font-weight);
+  font-size: var(--portfolio-typography-display-large-font-size);
+  line-height: var(--portfolio-typography-display-large-line-height);
+  letter-spacing: var(--portfolio-typography-display-large-letter-spacing);
+}
+
+.text-display-medium {
+  font-family: var(--portfolio-typography-display-medium-font-family);
+  font-weight: var(--portfolio-typography-display-medium-font-weight);
+  font-size: var(--portfolio-typography-display-medium-font-size);
+  line-height: var(--portfolio-typography-display-medium-line-height);
+  letter-spacing: var(--portfolio-typography-display-medium-letter-spacing);
+}
+
+.text-display-small {
+  font-family: var(--portfolio-typography-display-small-font-family);
+  font-weight: var(--portfolio-typography-display-small-font-weight);
+  font-size: var(--portfolio-typography-display-small-font-size);
+  line-height: var(--portfolio-typography-display-small-line-height);
+  letter-spacing: var(--portfolio-typography-display-small-letter-spacing);
+}
+
+.text-headline-large {
+  font-family: var(--portfolio-typography-headline-large-font-family);
+  font-weight: var(--portfolio-typography-headline-large-font-weight);
+  font-size: var(--portfolio-typography-headline-large-font-size);
+  line-height: var(--portfolio-typography-headline-large-line-height);
+  letter-spacing: var(--portfolio-typography-headline-large-letter-spacing);
+}
+
+.text-headline-medium {
+  font-family: var(--portfolio-typography-headline-medium-font-family);
+  font-weight: var(--portfolio-typography-headline-medium-font-weight);
+  font-size: var(--portfolio-typography-headline-medium-font-size);
+  line-height: var(--portfolio-typography-headline-medium-line-height);
+  letter-spacing: var(--portfolio-typography-headline-medium-letter-spacing);
+}
+
+.text-headline-small {
+  font-family: var(--portfolio-typography-headline-small-font-family);
+  font-weight: var(--portfolio-typography-headline-small-font-weight);
+  font-size: var(--portfolio-typography-headline-small-font-size);
+  line-height: var(--portfolio-typography-headline-small-line-height);
+  letter-spacing: var(--portfolio-typography-headline-small-letter-spacing);
+}
+
+.text-title-large {
+  font-family: var(--portfolio-typography-title-large-font-family);
+  font-weight: var(--portfolio-typography-title-large-font-weight);
+  font-size: var(--portfolio-typography-title-large-font-size);
+  line-height: var(--portfolio-typography-title-large-line-height);
+  letter-spacing: var(--portfolio-typography-title-large-letter-spacing);
+}
+
+.text-title-medium {
+  font-family: var(--portfolio-typography-title-medium-font-family);
+  font-weight: var(--portfolio-typography-title-medium-font-weight);
+  font-size: var(--portfolio-typography-title-medium-font-size);
+  line-height: var(--portfolio-typography-title-medium-line-height);
+  letter-spacing: var(--portfolio-typography-title-medium-letter-spacing);
+}
+
+.text-title-small {
+  font-family: var(--portfolio-typography-title-small-font-family);
+  font-weight: var(--portfolio-typography-title-small-font-weight);
+  font-size: var(--portfolio-typography-title-small-font-size);
+  line-height: var(--portfolio-typography-title-small-line-height);
+  letter-spacing: var(--portfolio-typography-title-small-letter-spacing);
+}
+
+.text-body-large {
+  font-family: var(--portfolio-typography-body-large-font-family);
+  font-weight: var(--portfolio-typography-body-large-font-weight);
+  font-size: var(--portfolio-typography-body-large-font-size);
+  line-height: var(--portfolio-typography-body-large-line-height);
+  letter-spacing: var(--portfolio-typography-body-large-letter-spacing);
+}
+
+.text-body-medium {
+  font-family: var(--portfolio-typography-body-medium-font-family);
+  font-weight: var(--portfolio-typography-body-medium-font-weight);
+  font-size: var(--portfolio-typography-body-medium-font-size);
+  line-height: var(--portfolio-typography-body-medium-line-height);
+  letter-spacing: var(--portfolio-typography-body-medium-letter-spacing);
+}
+
+.text-body-small {
+  font-family: var(--portfolio-typography-body-small-font-family);
+  font-weight: var(--portfolio-typography-body-small-font-weight);
+  font-size: var(--portfolio-typography-body-small-font-size);
+  line-height: var(--portfolio-typography-body-small-line-height);
+  letter-spacing: var(--portfolio-typography-body-small-letter-spacing);
+}
+
+.text-label-large {
+  font-family: var(--portfolio-typography-label-large-font-family);
+  font-weight: var(--portfolio-typography-label-large-font-weight);
+  font-size: var(--portfolio-typography-label-large-font-size);
+  line-height: var(--portfolio-typography-label-large-line-height);
+  letter-spacing: var(--portfolio-typography-label-large-letter-spacing);
+}
+
+.text-label-medium {
+  font-family: var(--portfolio-typography-label-medium-font-family);
+  font-weight: var(--portfolio-typography-label-medium-font-weight);
+  font-size: var(--portfolio-typography-label-medium-font-size);
+  line-height: var(--portfolio-typography-label-medium-line-height);
+  letter-spacing: var(--portfolio-typography-label-medium-letter-spacing);
+}
+
+.text-label-small {
+  font-family: var(--portfolio-typography-label-small-font-family);
+  font-weight: var(--portfolio-typography-label-small-font-weight);
+  font-size: var(--portfolio-typography-label-small-font-size);
+  line-height: var(--portfolio-typography-label-small-line-height);
+  letter-spacing: var(--portfolio-typography-label-small-letter-spacing);
+}
