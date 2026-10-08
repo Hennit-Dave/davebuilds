@@ -741,6 +741,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .story-tech-tags { margin-bottom: 0; }
 .story-links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+.link-note { margin-top: var(--space-md); color: var(--portfolio-color-on-surface-variant); font-size: 0.9rem; }
 
 @media (max-width: 960px) {
   .story-layout { grid-template-columns: 1fr; }
