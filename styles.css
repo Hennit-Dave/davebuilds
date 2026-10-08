@@ -322,12 +322,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   box-shadow: var(--shadow-lg);
 }
 .hero-portrait { margin: 0 0 var(--space-lg); width: fit-content; }
-.hero-portrait figcaption {
-  margin-top: var(--space-sm);
-  text-align: center;
-  color: var(--portfolio-color-on-surface-variant);
-  font-size: var(--portfolio-typography-body-small-font-size);
-}
 .hero-heading {
   font-family: var(--portfolio-font-family-mono);
   font-weight: var(--portfolio-typography-display-large-font-weight);
