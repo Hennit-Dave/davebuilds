@@ -1,0 +1,50 @@
+[
+  {
+    "source": "png/Consumer png.png",
+    "sourceBytes": 634135,
+    "output": "assets/projects/api-consumer-640.jpg",
+    "bytes": 57529
+  },
+  {
+    "source": "png/Consumer png.png",
+    "sourceBytes": 634135,
+    "output": "assets/projects/api-consumer-1280.jpg",
+    "bytes": 197673
+  },
+  {
+    "source": "png/idempotency png.png",
+    "sourceBytes": 557526,
+    "output": "assets/projects/order-idempotency-640.jpg",
+    "bytes": 58017
+  },
+  {
+    "source": "png/idempotency png.png",
+    "sourceBytes": 557526,
+    "output": "assets/projects/order-idempotency-1280.jpg",
+    "bytes": 162742
+  },
+  {
+    "source": "png/phunmix mobile.jpg",
+    "sourceBytes": 401223,
+    "output": "assets/projects/phunmix-mobile-480.jpg",
+    "bytes": 119177
+  },
+  {
+    "source": "png/phunmix mobile.jpg",
+    "sourceBytes": 401223,
+    "output": "assets/projects/phunmix-mobile-960.jpg",
+    "bytes": 321387
+  },
+  {
+    "source": "png/Phunmix-web png.png",
+    "sourceBytes": 2659816,
+    "output": "assets/projects/phunmix-desktop-640.jpg",
+    "bytes": 49956
+  },
+  {
+    "source": "png/Phunmix-web png.png",
+    "sourceBytes": 2659816,
+    "output": "assets/projects/phunmix-desktop-1280.jpg",
+    "bytes": 139537
+  }
+]

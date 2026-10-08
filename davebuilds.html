@@ -5,13 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
   (function () {
-    var stored = localStorage.getItem('theme');
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch { /* Use device theme when storage is unavailable. */ }
     var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
 <title>DaveBuilds — The Story Behind Every Project | Dave Hennit</title>
-<meta name="description" content="DaveBuilds is where Dave Hennit tells the complete story behind every finished project — the idea, the planning, the design, the build, and what came out of it.">
+<meta name="description" content="Build notes and case studies by Dave Hennit (David Enitan), a design engineer and UI/UX designer who builds with AI agents.">
+<link rel="canonical" href="https://davebuilds.vercel.app/davebuilds.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dave Hennit">
+<meta property="og:title" content="DaveBuilds — The Story Behind Every Project | Dave Hennit">
+<meta property="og:description" content="Build notes and case studies by Dave Hennit (David Enitan), a design engineer and UI/UX designer who builds with AI agents.">
+<meta property="og:url" content="https://davebuilds.vercel.app/davebuilds.html">
+<meta property="og:image" content="https://davebuilds.vercel.app/assets/david-enitan.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of David Enitan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@hennitdave">
+<meta name="twitter:title" content="DaveBuilds — The Story Behind Every Project | Dave Hennit">
+<meta name="twitter:description" content="Build notes and case studies by Dave Hennit (David Enitan), a design engineer and UI/UX designer who builds with AI agents.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1115'/%3E%3Ccircle cx='9' cy='16' r='2.4' fill='%234C8DFF'/%3E%3Ccircle cx='23' cy='9' r='2.4' fill='%23C2B8FF'/%3E%3Ccircle cx='23' cy='23' r='2.4' fill='%234C8DFF'/%3E%3Cpath d='M9 16L23 9M9 16L23 23' stroke='%238A93A0' stroke-width='1.4'/%3E%3C/svg%3E">
 
@@ -60,16 +76,16 @@
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Primary mobile" hidden>
     <a href="index.html#home">Home</a>
     <a href="index.html#projects">Projects</a>
     <a href="davebuilds.html" class="active" aria-current="page">DaveBuilds</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
-  </div>
+  </nav>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- ============ DAVEBUILDS INTRO ============ -->
   <section class="page-intro">
@@ -78,9 +94,8 @@
       <p class="eyebrow enter">// DaveBuilds</p>
       <h1 class="page-intro-heading enter" style="transition-delay:80ms">The story behind every build.</h1>
       <p class="page-intro-sub enter" style="transition-delay:160ms">
-        Every finished project in <a class="inline-link" href="index.html#projects">Projects</a> has a home here —
-        the idea, the planning, the design decisions, how it was actually built, what broke along the way,
-        and what shipped in the end. Not a blog. Not a feed. The complete story behind the work, one project at a time.
+        Notes on the decisions, agent direction and checks behind the work.
+        Includes earlier projects alongside the latest case study.
       </p>
     </div>
   </section>
@@ -89,7 +104,7 @@
   <section class="stories">
     <div class="container">
       <div class="story-grid" id="story-grid">
-        <!-- Rendered by davebuilds.js from the PROJECTS array in data.js -->
+        <!-- STORY_CARDS -->
       </div>
     </div>
   </section>
@@ -100,18 +115,19 @@
   <div class="container footer-inner">
     <div class="footer-identity">
       <p class="footer-name">Dave Hennit</p>
-      <p class="footer-legal">Enitan Oluwaseun David</p>
-      <p class="footer-tagline">✨ Thoughtfully designed by Dave Hennit</p>
+      <p class="footer-legal">David Enitan</p>
+      <p class="footer-tagline">Designed by Dave Hennit</p>
     </div>
     <div class="footer-meta">
       <p>&copy; <span id="year"></span> Dave Hennit.</p>
-      <button class="footer-top" type="button">Back to top ↑</button>
+      <button class="footer-top" type="button">Back to top <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"/></svg></button>
     </div>
   </div>
 </footer>
 
 <script src="data.js"></script>
 <script src="common.js"></script>
+<script src="project-card.js"></script>
 <script src="davebuilds.js"></script>
 </body>
 </html>

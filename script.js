@@ -3,47 +3,11 @@
 // scroll-reveal) lives in common.js. Project data lives in data.js.
 // ---------------------------------------------------------------------------
 
-const icons = {
-  live: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  code: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-};
-
 function renderProjects() {
   const grid = document.getElementById("project-grid");
-  if (!grid) return;
-
-  grid.innerHTML = PROJECTS.map((p, i) => {
-    const liveLink = p.liveDemo
-      ? `<a href="${p.liveDemo}" target="_blank" rel="noopener">${icons.live} Live Demo</a>`
-      : `<span class="disabled">${icons.live} Live Demo</span>`;
-
-    const codeLink = p.github
-      ? `<a href="${p.github}" target="_blank" rel="noopener">${icons.code} GitHub</a>`
-      : "";
-
-    const cover = p.thumbnail
-      ? `<div class="project-cover"><img src="${p.thumbnail}" alt="${p.name} screenshot" loading="lazy"></div>`
-      : `<div class="project-cover" style="--cover-a:${p.cover[0]};--cover-b:${p.cover[1]}"></div>`;
-
-    return `
-      <article class="project-card scrub-reveal" style="animation-delay:${i * 90}ms">
-        <div class="window-chrome">
-          <div class="window-chrome-dots">
-            <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-          </div>
-          <span class="window-title">${p.name.toLowerCase().replace(/\s+/g, "-")}.app</span>
-        </div>
-        ${cover}
-        <div class="project-body">
-          <h3 class="project-title">${p.name}</h3>
-          <p class="project-blurb">${p.description}</p>
-          <div class="project-tags">${p.stack.map(t => `<span>${t}</span>`).join("")}</div>
-          <div class="project-links">${liveLink}${codeLink}</div>
-          <a class="story-link" href="${p.storyUrl}">Behind the Build <span class="story-arrow">→</span></a>
-        </div>
-      </article>
-    `;
-  }).join("");
+  const progress = document.getElementById("progress-grid");
+  if (grid && !grid.querySelector(".project-card")) grid.innerHTML = PROJECTS.filter(p => p.featured && !p.inProgress).map(renderProjectCard).join("");
+  if (progress && !progress.querySelector(".progress-card")) progress.innerHTML = PROJECTS.filter(p => p.featured && p.inProgress).map(renderProjectCard).join("");
 }
 
 // ---------------------------------------------------------------------------
@@ -67,48 +31,6 @@ function initActiveNav() {
 }
 
 // ---------------------------------------------------------------------------
-// Hero name typewriter — types out "Dave Hennit" once the hero comes into
-// view, then freezes the cursor (no more blinking). Skipped for
-// reduced-motion.
-// ---------------------------------------------------------------------------
-function initHeroTypewriter() {
-  const el = document.getElementById("hero-type");
-  if (!el) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  const text = el.dataset.text || el.textContent;
-  const heading = el.closest(".hero-heading") || el;
-  const cursor = el.nextElementSibling;
-  let typed = false;
-
-  const type = () => {
-    if (typed) return;
-    typed = true;
-    el.textContent = "";
-    let i = 0;
-    (function tick() {
-      el.textContent = text.slice(0, i);
-      i++;
-      if (i <= text.length) {
-        setTimeout(tick, 180);
-      } else if (cursor) {
-        cursor.classList.add("cursor-done");
-      }
-    })();
-  };
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        io.unobserve(entry.target);
-        setTimeout(type, 550); // let the hero's fade-in settle first
-      }
-    });
-  }, { threshold: 0.4 });
-  io.observe(heading);
-}
-
-// ---------------------------------------------------------------------------
 // Hero scroll cue — hide after user starts scrolling
 // ---------------------------------------------------------------------------
 function initScrollCue() {
@@ -119,7 +41,7 @@ function initScrollCue() {
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   cue.addEventListener("click", () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("projects")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   });
 }
 
@@ -169,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   initActiveNav();
   initReveal();
-  initHeroTypewriter();
   initScrollCue();
   initMagnetic();
   initReactiveGraph();

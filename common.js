@@ -23,7 +23,7 @@ function initTheme() {
   if (toggle) {
     toggle.addEventListener("click", () => {
       const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      localStorage.setItem("theme", next);
+      try { localStorage.setItem("theme", next); } catch { /* Theme still works without storage. */ }
       applyTheme(next);
     });
   }
@@ -35,7 +35,7 @@ function initTheme() {
   const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
   darkQuery.addEventListener("change", (e) => {
     const next = e.matches ? "dark" : "light";
-    localStorage.setItem("theme", next);
+    try { localStorage.setItem("theme", next); } catch { /* Theme still works without storage. */ }
     applyTheme(next);
   });
 }
@@ -43,28 +43,42 @@ function initTheme() {
 function initMobileMenu() {
   const btn = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
+  const desktop = window.matchMedia("(min-width: 761px)");
   if (!btn || !menu) return;
 
-  const close = () => {
+  const close = (restoreFocus = false) => {
+    menu.hidden = true;
     menu.classList.remove("open");
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-label", "Open menu");
+    if (restoreFocus) btn.focus();
   };
   const open = () => {
+    if (desktop.matches) return;
+    menu.hidden = false;
     menu.classList.add("open");
     btn.setAttribute("aria-expanded", "true");
     btn.setAttribute("aria-label", "Close menu");
   };
-
-  btn.addEventListener("click", () => {
-    menu.classList.contains("open") ? close() : open();
+  btn.addEventListener("click", () => menu.hidden ? open() : close());
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => close()));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && !menu.hidden) close(true);
   });
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
-  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  document.addEventListener("click", e => {
+    if (!menu.hidden && !menu.contains(e.target) && !btn.contains(e.target)) close();
+  });
+  desktop.addEventListener("change", () => {
+    const focusWasInMenu = menu.contains(document.activeElement) || document.activeElement === btn;
+    close();
+    if (desktop.matches && focusWasInMenu) document.querySelector(".nav-links a")?.focus();
+  });
+  close();
 }
 
 // Drives any .scrub-reveal / .enter element present on the page, including
 // ones rendered dynamically — call this AFTER any data-driven render() call.
+/* exported initReveal */
 function initReveal() {
   const targets = document.querySelectorAll(".scrub-reveal, .enter");
   const io = new IntersectionObserver(entries => {
@@ -84,11 +98,14 @@ function initFooter() {
 
   const topBtn = document.querySelector(".footer-top");
   if (topBtn) {
-    topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" }));
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-availability]").forEach(el => {
+    el.textContent = SITE.availability;
+  });
   initTheme();
   initMobileMenu();
   initFooter();

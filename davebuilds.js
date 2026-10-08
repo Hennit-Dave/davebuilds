@@ -1,38 +1,29 @@
-// ---------------------------------------------------------------------------
-// davebuilds.html-specific behavior. Renders one card per finished project
-// from the shared PROJECTS array in data.js — add a project there and it
-// appears here automatically, no changes needed on this page.
-// ---------------------------------------------------------------------------
-
-function renderStoryGrid() {
-  const grid = document.getElementById("story-grid");
-  if (!grid) return;
-
-  grid.innerHTML = PROJECTS.map((p, i) => {
-    const thumb = p.thumbnail
-      ? `<div class="story-card-thumb"><img src="${p.thumbnail}" alt="${p.name} screenshot" loading="lazy"></div>`
-      : `<div class="story-card-thumb" style="--cover-a:${p.cover[0]};--cover-b:${p.cover[1]}"></div>`;
-
-    return `
-    <article class="story-card glass scrub-reveal" style="animation-delay:${i * 90}ms">
+// The story index includes only entries with a real case-study route.
+/* exported renderStoryCards */
+function renderStoryCards() {
+  return PROJECTS.filter(p => p.storyUrl).map(p => {
+    const image = p.images?.[0];
+    const thumb = image ? renderProjectImage(image) : p.thumbnail
+      ? `<div class="story-card-thumb"><img src="${escapeMarkup(p.thumbnail)}" alt="${escapeMarkup(p.thumbnailAlt)}" width="${p.thumbnailWidth}" height="${p.thumbnailHeight}" loading="lazy" decoding="async"></div>`
+      : "";
+    return `<article class="story-card glass">
       ${thumb}
       <div class="story-card-body">
-        <h2 class="story-card-title">${p.name}</h2>
-        <p class="story-card-desc">${p.storyTeaser}</p>
-        <div class="project-tags">${p.stack.map(t => `<span>${t}</span>`).join("")}</div>
-        <div class="story-card-meta">
-          <span>${p.readingTime}</span>
-          <span class="meta-sep">·</span>
-          <span>Completed ${p.dateCompleted}</span>
-        </div>
-        <a class="story-card-cta" href="${p.storyUrl}">Explore Project <span class="story-arrow">→</span></a>
+        <h2 class="story-card-title">${escapeMarkup(p.name)}</h2>
+        <p class="story-card-desc">${escapeMarkup(p.storyTeaser)}</p>
+        ${p.badges?.length ? `<div class="project-status">${p.badges.map(b => `<span class="status-badge">${escapeMarkup(b)}</span>`).join("")}</div>` : ""}
+        <div class="project-tags">${p.stack.map(t => `<span>${escapeMarkup(t)}</span>`).join("")}</div>
+        ${p.dateCompleted ? `<p class="story-card-meta">${escapeMarkup(p.readingTime)} · Completed ${escapeMarkup(p.dateCompleted)}</p>` : ""}
+        <a class="story-card-cta" href="${escapeMarkup(p.storyUrl)}">Read story ${heroicon("arrow-right", "story-arrow")}</a>
       </div>
-    </article>
-  `;
+    </article>`;
   }).join("");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderStoryGrid();
-  initReveal();
-});
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("story-grid");
+    if (grid && !grid.querySelector(".story-card")) grid.innerHTML = renderStoryCards();
+    initReveal();
+  });
+}

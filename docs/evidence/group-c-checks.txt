@@ -1,0 +1,68 @@
+$ npm run build
+Built 6 HTML pages and 9 CSS/JS files into dist/.
+Copied publishable assets; excluded original portfolio screenshots containing outdated identity/copy.
+Rendered availability from site.js. No runtime dependencies.
+npm notice run dave-hennit-portfolio@1.0.0 build
+npm notice run node scripts/build.mjs
+Exit code: 0
+
+$ npm run lint
+npm notice run dave-hennit-portfolio@1.0.0 lint
+npm notice run eslint . --max-warnings=0
+Exit code: 0
+
+$ node docs/evidence/tooling/menu-check.mjs
+PASS: open/ARIA, Escape/focus return, desktop resize/focus transfer, closed after mobile return, link dismissal, outside dismissal.
+Exit code: 0
+
+$ python3 docs/evidence/tooling/check-built-html.py
+PASS index.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+Traceback (most recent call last):
+  File "/Users/blk/Desktop/myportfolio/docs/evidence/tooling/check-built-html.py", line 29, in <module>
+    assert attrs.get('width') and attrs.get('height'), (name, 'missing image dimensions')
+AssertionError: ('davebuilds.html', 'missing image dimensions')
+Exit code: 1
+
+
+Follow-up: added measured dimensions to existing story images after the HTML check found them missing.
+$ npm run build
+Built 6 HTML pages and 9 CSS/JS files into dist/.
+Copied publishable assets; excluded original portfolio screenshots containing outdated identity/copy.
+Rendered availability from site.js. No runtime dependencies.
+npm notice run dave-hennit-portfolio@1.0.0 build
+npm notice run node scripts/build.mjs
+Exit code: 0
+
+$ npm run lint
+npm notice run dave-hennit-portfolio@1.0.0 lint
+npm notice run eslint . --max-warnings=0
+Exit code: 0
+
+$ node docs/evidence/tooling/menu-check.mjs
+PASS: open/ARIA, Escape/focus return, desktop resize/focus transfer, closed after mobile return, link dismissal, outside dismissal.
+Exit code: 0
+
+$ python3 docs/evidence/tooling/check-built-html.py
+PASS index.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+Traceback (most recent call last):
+  File "/Users/blk/Desktop/myportfolio/docs/evidence/tooling/check-built-html.py", line 24, in <module>
+    assert any(a.get('href') == '#main' for _, a in page.tags)
+AssertionError
+Exit code: 1
+
+
+Validator correction: accept the existing story-main skip target as well as main. No site change.
+$ python3 docs/evidence/tooling/check-built-html.py
+PASS index.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds-portfolio.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds-freelance-marketplace-api.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds-lumiere.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS davebuilds-taskflow.html: one h1, unique IDs, skip/main target, metadata, image alt/dimensions, local links.
+PASS homepage availability/legacy separation and case-study TODO checks 2–5.
+Exit code: 0
+
+$ git diff --check
+Exit code: 0
+
