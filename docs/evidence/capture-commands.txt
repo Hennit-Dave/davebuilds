@@ -1,0 +1,35 @@
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/ --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-768.json --screenEmulation.width=768 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/ --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-768.json --screenEmulation.width=768 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/ --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-1280.json --screenEmulation.width=1280 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/ --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-1280.json --screenEmulation.width=1280 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-case-study-360.json --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-case-study-360.json --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-case-study.json --screenEmulation.width=1280 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-case-study.json --screenEmulation.width=1280 --screenEmulation.height=900 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/ --chrome-flags=--headless=new --force-dark-mode --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-360-dark.json --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/ --chrome-flags=--headless=new --force-dark-mode --config-path=docs/evidence/tooling/screenshot-config.mjs --output=json --output-path=/private/tmp/portfolio-home-360-dark.json --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/ --chrome-flags=--headless=new --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=docs/evidence/lighthouse-mobile --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/ --chrome-flags=--headless=new --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=docs/evidence/lighthouse-mobile --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0
+$ npm exec --offline --cache /private/tmp/portfolio-npm-cache --package lighthouse -- lighthouse http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=docs/evidence/lighthouse-case-mobile --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+npm notice run dave-hennit-portfolio@1.0.0 npx
+npm notice run 'lighthouse' http://127.0.0.1:4173/davebuilds-freelance-marketplace-api.html --chrome-flags=--headless=new --only-categories=performance,accessibility,best-practices,seo --output=html --output=json --output-path=docs/evidence/lighthouse-case-mobile --screenEmulation.width=360 --screenEmulation.height=800 --screenEmulation.deviceScaleFactor=1 --quiet
+
+Exit code: 0

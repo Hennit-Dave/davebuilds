@@ -5,13 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
   (function () {
-    var stored = localStorage.getItem('theme');
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch { /* Use device theme when storage is unavailable. */ }
     var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
 <title>Dave Hennit — Design Engineer &amp; UI/UX Designer</title>
 <meta name="description" content="Dave Hennit (David Enitan) — Design Engineer and UI/UX Designer. I build polished apps with AI agents.">
+<link rel="canonical" href="https://davebuilds.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dave Hennit">
+<meta property="og:title" content="Dave Hennit — Design Engineer &amp; UI/UX Designer">
+<meta property="og:description" content="Dave Hennit (David Enitan) — Design Engineer and UI/UX Designer. I build polished apps with AI agents.">
+<meta property="og:url" content="https://davebuilds.vercel.app/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@hennitdave">
+<meta name="twitter:title" content="Dave Hennit — Design Engineer &amp; UI/UX Designer">
+<meta name="twitter:description" content="Dave Hennit (David Enitan) — Design Engineer and UI/UX Designer. I build polished apps with AI agents.">
 
 <!-- Featured projects and story links are maintained in data.js. -->
 
@@ -62,16 +73,16 @@
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Primary mobile" hidden>
     <a href="index.html#home" data-nav>Home</a>
     <a href="index.html#projects" data-nav>Projects</a>
     <a href="davebuilds.html">DaveBuilds</a>
     <a href="index.html#about" data-nav>About</a>
     <a href="index.html#contact" data-nav>Contact</a>
-  </div>
+  </nav>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
@@ -195,7 +206,7 @@
           <p class="out">design engineering · UI/UX · AI-assisted builds</p>
           <p><span class="prompt">$</span> status</p>
           <p class="out out-accent" data-availability></p>
-          <p><span class="prompt">$</span> <span class="cursor-blink">_</span></p>
+          <p><span class="prompt">$</span> <span class="cursor-blink" aria-hidden="true">_</span></p>
         </div>
       </div>
     </div>

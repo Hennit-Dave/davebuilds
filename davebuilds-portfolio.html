@@ -5,13 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
   (function () {
-    var stored = localStorage.getItem('theme');
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch { /* Use device theme when storage is unavailable. */ }
     var theme = stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
 <title>Designing My Portfolio — DaveBuilds | Dave Hennit</title>
-<meta name="description" content="The complete story behind this portfolio: the identity, the design system, why Projects and DaveBuilds had to stay separate, and what shipped in the end.">
+<meta name="description" content="An AI-assisted portfolio build: decisions, review and lessons from Dave Hennit, design engineer and UI/UX designer.">
+<link rel="canonical" href="https://davebuilds.vercel.app/davebuilds-portfolio.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dave Hennit">
+<meta property="og:title" content="Designing My Portfolio — DaveBuilds | Dave Hennit">
+<meta property="og:description" content="An AI-assisted portfolio build: decisions, review and lessons from Dave Hennit, design engineer and UI/UX designer.">
+<meta property="og:url" content="https://davebuilds.vercel.app/davebuilds-portfolio.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@hennitdave">
+<meta name="twitter:title" content="Designing My Portfolio — DaveBuilds | Dave Hennit">
+<meta name="twitter:description" content="An AI-assisted portfolio build: decisions, review and lessons from Dave Hennit, design engineer and UI/UX designer.">
 
 <!--
   This file doubles as the reusable story template (data.js points here).
@@ -67,16 +78,16 @@
     </div>
   </div>
 
-  <div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Primary mobile" hidden>
     <a href="index.html#home">Home</a>
     <a href="index.html#projects">Projects</a>
     <a href="davebuilds.html" class="active" aria-current="page">DaveBuilds</a>
     <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
-  </div>
+  </nav>
 </header>
 
-<main id="story-main">
+<main id="story-main" tabindex="-1">
 
   <!-- ============ STORY HEADER ============ -->
   <header class="story-header container">

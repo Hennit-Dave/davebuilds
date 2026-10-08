@@ -1,0 +1,99 @@
+{
+  "viewport": {
+    "width": 360,
+    "height": 800
+  },
+  "documentWidth": 360,
+  "bodyWidth": 360,
+  "title": "Freelance Marketplace API \u2014 DaveBuilds | Dave Hennit",
+  "h1Count": 1,
+  "theme": "light",
+  "menuHidden": true,
+  "headings": [
+    {
+      "text": "Freelance Marketplace API",
+      "level": "H1",
+      "x": 24,
+      "y": 180,
+      "width": 312,
+      "height": 69.90625
+    },
+    {
+      "text": "Problem",
+      "level": "H2",
+      "x": 24,
+      "y": 1038.140625,
+      "width": 312,
+      "height": 24
+    },
+    {
+      "text": "My role",
+      "level": "H2",
+      "x": 24,
+      "y": 1561.296875,
+      "width": 312,
+      "height": 24
+    },
+    {
+      "text": "Process",
+      "level": "H2",
+      "x": 24,
+      "y": 2026.859375,
+      "width": 312,
+      "height": 24
+    },
+    {
+      "text": "Key decisions",
+      "level": "H2",
+      "x": 24,
+      "y": 3402.765625,
+      "width": 312,
+      "height": 24
+    },
+    {
+      "text": "Result",
+      "level": "H2",
+      "x": 24,
+      "y": 4174.765625,
+      "width": 312,
+      "height": 24
+    },
+    {
+      "text": "What I'd do differently",
+      "level": "H2",
+      "x": 24,
+      "y": 5004.53125,
+      "width": 312,
+      "height": 48
+    }
+  ],
+  "cards": [],
+  "fixedElements": [
+    {
+      "class": "scroll-progress",
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 3
+    },
+    {
+      "class": "nav",
+      "x": 0,
+      "y": 0,
+      "width": 360,
+      "height": 65
+    }
+  ],
+  "images": [
+    {
+      "src": "http://127.0.0.1:4173/assets/projects/api-consumer-640.jpg",
+      "alt": "Gigs list with a category filter on the API's consumer page",
+      "loaded": true,
+      "x": 24,
+      "y": 580.6875,
+      "width": 312,
+      "height": 224.734375
+    }
+  ],
+  "accessibilityScoreDuringCapture": 100
+}

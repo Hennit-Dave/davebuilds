@@ -23,6 +23,7 @@ const files = (await readdir(root)).filter(name =>
 for (const name of files) {
   let source = await readFile(join(root, name), "utf8");
   if (name.endsWith(".html")) {
+    source = source.replace(/(<span id="year">)[^<]*(<\/span>)/g, `$1${new Date().getFullYear()}$2`);
     source = source
       .replace("<!-- PROJECT_CARDS -->", rendering.PROJECTS.filter(p => p.featured && !p.inProgress).map(rendering.renderProjectCard).join(""))
       .replace("<!-- PROGRESS_CARDS -->", rendering.PROJECTS.filter(p => p.featured && p.inProgress).map(rendering.renderProjectCard).join(""))

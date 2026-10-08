@@ -1,0 +1,188 @@
+{
+  "viewport": {
+    "width": 768,
+    "height": 900
+  },
+  "documentWidth": 768,
+  "bodyWidth": 768,
+  "title": "Dave Hennit \u2014 Design Engineer & UI/UX Designer",
+  "h1Count": 1,
+  "theme": "light",
+  "menuHidden": true,
+  "headings": [
+    {
+      "text": "Dave Hennit_",
+      "level": "H1",
+      "x": 193.6875,
+      "y": 291.96875,
+      "width": 380.625,
+      "height": 56.453125
+    },
+    {
+      "text": "Selected work.",
+      "level": "H2",
+      "x": 24,
+      "y": 1053,
+      "width": 720,
+      "height": 40
+    },
+    {
+      "text": "Freelance Marketplace API",
+      "level": "H3",
+      "x": 49,
+      "y": 1594.890625,
+      "width": 298,
+      "height": 48
+    },
+    {
+      "text": "Order Confirmation Jobs",
+      "level": "H3",
+      "x": 421,
+      "y": 1573.375,
+      "width": 298,
+      "height": 48
+    },
+    {
+      "text": "Phunmix Delight",
+      "level": "H3",
+      "x": 49,
+      "y": 2668.453125,
+      "width": 298,
+      "height": 24
+    },
+    {
+      "text": "In progress",
+      "level": "H3",
+      "x": 24,
+      "y": 3099.453125,
+      "width": 720,
+      "height": 24
+    },
+    {
+      "text": "Rota",
+      "level": "H4",
+      "x": 49,
+      "y": 3177.71875,
+      "width": 302,
+      "height": 24
+    },
+    {
+      "text": "Matinee",
+      "level": "H4",
+      "x": 417,
+      "y": 3177.71875,
+      "width": 302,
+      "height": 24
+    },
+    {
+      "text": "Time-Tracker",
+      "level": "H3",
+      "x": 24,
+      "y": 3405.71875,
+      "width": 720,
+      "height": 24
+    },
+    {
+      "text": "The person behind Dave Hennit.",
+      "level": "H2",
+      "x": 24,
+      "y": 3790.71875,
+      "width": 720,
+      "height": 40
+    },
+    {
+      "text": "How I work",
+      "level": "H3",
+      "x": 24,
+      "y": 3902.71875,
+      "width": 720,
+      "height": 24
+    },
+    {
+      "text": "Let's build something worth shipping.",
+      "level": "H2",
+      "x": 88,
+      "y": 4730.859375,
+      "width": 592,
+      "height": 80
+    }
+  ],
+  "cards": [
+    {
+      "title": "Freelance Marketplace API",
+      "x": 24,
+      "y": 1189,
+      "width": 348,
+      "height": 901.890625
+    },
+    {
+      "title": "Order Confirmation Jobs",
+      "x": 396,
+      "y": 1189,
+      "width": 348,
+      "height": 935.375
+    },
+    {
+      "title": "Phunmix Delight",
+      "x": 24,
+      "y": 2148.375,
+      "width": 348,
+      "height": 887.078125
+    }
+  ],
+  "fixedElements": [
+    {
+      "class": "scroll-progress",
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 3
+    },
+    {
+      "class": "nav",
+      "x": 0,
+      "y": 0,
+      "width": 768,
+      "height": 65
+    }
+  ],
+  "images": [
+    {
+      "src": "http://127.0.0.1:4173/assets/projects/api-consumer-640.jpg",
+      "alt": "Gigs list with a category filter on the API's consumer page",
+      "loaded": true,
+      "x": 41,
+      "y": 1251,
+      "width": 314,
+      "height": 226.171875
+    },
+    {
+      "src": "http://127.0.0.1:4173/assets/projects/order-idempotency-640.jpg",
+      "alt": "Terminal showing the same order posted twice and the same job id returned",
+      "loaded": true,
+      "x": 413,
+      "y": 1251,
+      "width": 314,
+      "height": 185.9375
+    },
+    {
+      "src": "http://127.0.0.1:4173/assets/projects/phunmix-mobile-480.jpg",
+      "alt": "Phunmix Delight gallery on a phone with a 'Make an enquiry' button",
+      "loaded": true,
+      "x": 41,
+      "y": 2210.375,
+      "width": 136,
+      "height": 279.640625
+    },
+    {
+      "src": "http://127.0.0.1:4173/assets/projects/phunmix-desktop-640.jpg",
+      "alt": "Phunmix Delight desktop homepage with a blue cocktail and enquiry links",
+      "loaded": true,
+      "x": 185,
+      "y": 2308.015625,
+      "width": 170,
+      "height": 103.0625
+    }
+  ],
+  "accessibilityScoreDuringCapture": 100
+}

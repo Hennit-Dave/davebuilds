@@ -4,7 +4,7 @@ function renderStoryCards() {
   return PROJECTS.filter(p => p.storyUrl).map(p => {
     const image = p.images?.[0];
     const thumb = image ? renderProjectImage(image) : p.thumbnail
-      ? `<div class="story-card-thumb"><img src="${escapeMarkup(p.thumbnail)}" alt="${escapeMarkup(p.name)} screenshot" loading="lazy" decoding="async"></div>`
+      ? `<div class="story-card-thumb"><img src="${escapeMarkup(p.thumbnail)}" alt="${escapeMarkup(p.thumbnailAlt)}" width="${p.thumbnailWidth}" height="${p.thumbnailHeight}" loading="lazy" decoding="async"></div>`
       : "";
     return `<article class="story-card glass">
       ${thumb}

@@ -31,48 +31,6 @@ function initActiveNav() {
 }
 
 // ---------------------------------------------------------------------------
-// Hero name typewriter — types out "Dave Hennit" once the hero comes into
-// view, then freezes the cursor (no more blinking). Skipped for
-// reduced-motion.
-// ---------------------------------------------------------------------------
-function initHeroTypewriter() {
-  const el = document.getElementById("hero-type");
-  if (!el) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  const text = el.dataset.text || el.textContent;
-  const heading = el.closest(".hero-heading") || el;
-  const cursor = el.nextElementSibling;
-  let typed = false;
-
-  const type = () => {
-    if (typed) return;
-    typed = true;
-    el.textContent = "";
-    let i = 0;
-    (function tick() {
-      el.textContent = text.slice(0, i);
-      i++;
-      if (i <= text.length) {
-        setTimeout(tick, 180);
-      } else if (cursor) {
-        cursor.classList.add("cursor-done");
-      }
-    })();
-  };
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        io.unobserve(entry.target);
-        setTimeout(type, 550); // let the hero's fade-in settle first
-      }
-    });
-  }, { threshold: 0.4 });
-  io.observe(heading);
-}
-
-// ---------------------------------------------------------------------------
 // Hero scroll cue — hide after user starts scrolling
 // ---------------------------------------------------------------------------
 function initScrollCue() {
@@ -83,7 +41,7 @@ function initScrollCue() {
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   cue.addEventListener("click", () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("projects")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   });
 }
 
@@ -133,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   initActiveNav();
   initReveal();
-  initHeroTypewriter();
   initScrollCue();
   initMagnetic();
   initReactiveGraph();
