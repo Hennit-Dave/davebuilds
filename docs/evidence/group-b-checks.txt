@@ -1,0 +1,16 @@
+$ npm run build
+npm notice run dave-hennit-portfolio@1.0.0 build
+npm notice run node scripts/build.mjs
+Built 6 HTML pages and 9 CSS/JS files into dist/.
+Copied publishable assets; excluded original portfolio screenshots containing outdated identity/copy.
+Rendered availability from site.js. No runtime dependencies.
+Exit code: 0
+
+$ npm run lint
+npm notice run dave-hennit-portfolio@1.0.0 lint
+npm notice run eslint . --max-warnings=0
+Exit code: 0
+
+$ git diff --check
+Exit code: 0
+

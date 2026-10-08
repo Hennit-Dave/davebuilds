@@ -13,14 +13,7 @@
 <title>Dave Hennit — Design Engineer &amp; UI/UX Designer</title>
 <meta name="description" content="Dave Hennit (David Enitan) — Design Engineer and UI/UX Designer. I build polished apps with AI agents.">
 
-<!--
-  Project data (names, descriptions, stack, links, dates) is the single source
-  of truth for both this page's Projects grid AND every davebuilds.html card —
-  it lives in data.js as const PROJECTS. Add a finished project there once;
-  it appears in both places automatically.
-  To add its DaveBuilds story: copy davebuilds-portfolio.html, rewrite the
-  9 sections, and point that project's "storyUrl" at the new file.
--->
+<!-- Featured projects and story links are maintained in data.js. -->
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1115'/%3E%3Ccircle cx='9' cy='16' r='2.4' fill='%234C8DFF'/%3E%3Ccircle cx='23' cy='9' r='2.4' fill='%23C2B8FF'/%3E%3Ccircle cx='23' cy='23' r='2.4' fill='%234C8DFF'/%3E%3Cpath d='M9 16L23 9M9 16L23 23' stroke='%238A93A0' stroke-width='1.4'/%3E%3C/svg%3E">
 
@@ -136,16 +129,27 @@
     <div class="container">
       <div class="section-header scrub-reveal">
         <p class="eyebrow">// Projects</p>
-        <h2 class="section-heading" id="projects-heading">Finished, shipped, and out in the world.</h2>
+        <h2 class="section-heading" id="projects-heading">Selected work.</h2>
         <p class="body-text section-header-sub">
-          Only completed work lives here — what it does, and how it was built.
-          The thinking behind each one lives over in
-          <a class="inline-link" href="davebuilds.html">DaveBuilds</a>.
+          Apps and systems I designed and built with AI agents, with my role made clear.
         </p>
       </div>
 
       <div class="project-grid" id="project-grid">
-        <!-- Rendered by script.js from the PROJECTS array in data.js -->
+        <!-- PROJECT_CARDS -->
+      </div>
+      <div class="work-in-progress">
+        <h3 class="about-subheading">In progress</h3>
+        <div class="progress-grid" id="progress-grid"><!-- PROGRESS_CARDS --></div>
+      </div>
+      <div class="open-source">
+        <p class="eyebrow">// Open source</p>
+        <h3 class="project-title">Time-Tracker</h3>
+        <p class="body-text">Merged docs PR (closes #322) explaining UTC storage vs local report dates, with a validation script and 96 passing tests.</p>
+        <div class="project-links">
+          <a href="https://github.com/HafidIdrissi/Time-Tracker">HafidIdrissi/Time-Tracker</a>
+          <a href="https://github.com/HafidIdrissi/Time-Tracker/pull/338">Read merged PR #338 →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -243,6 +247,7 @@
 <script src="site.js"></script>
 <script src="data.js"></script>
 <script src="common.js"></script>
+<script src="project-card.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

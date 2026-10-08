@@ -6,6 +6,10 @@ import { runInNewContext } from "node:vm";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "dist");
 const site = runInNewContext(`${await readFile(join(root, "site.js"), "utf8")}; SITE`);
+const rendering = runInNewContext(`${await readFile(join(root, "data.js"), "utf8")};
+  ${await readFile(join(root, "project-card.js"), "utf8")};
+  ${await readFile(join(root, "davebuilds.js"), "utf8")};
+  ({ PROJECTS, renderProjectCard, renderStoryCards, renderProjectImage })`);
 const escapeHtml = value => value.replace(/[&<>"']/g, char => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
 })[char]);
@@ -19,6 +23,11 @@ const files = (await readdir(root)).filter(name =>
 for (const name of files) {
   let source = await readFile(join(root, name), "utf8");
   if (name.endsWith(".html")) {
+    source = source
+      .replace("<!-- PROJECT_CARDS -->", rendering.PROJECTS.filter(p => p.featured && !p.inProgress).map(rendering.renderProjectCard).join(""))
+      .replace("<!-- PROGRESS_CARDS -->", rendering.PROJECTS.filter(p => p.featured && p.inProgress).map(rendering.renderProjectCard).join(""))
+      .replace("<!-- STORY_CARDS -->", rendering.renderStoryCards())
+      .replace("<!-- API_SCREENSHOT -->", rendering.renderProjectImage(rendering.PROJECTS[0].images[0], "(max-width: 848px) calc(100vw - 48px), 800px"));
     // Render from the same config for visitors with JavaScript disabled.
     source = source.replace(/(<p\b[^>]*\bdata-availability[^>]*>)[\s\S]*?(<\/p>)/g,
       (_, open, close) => `${open}${escapeHtml(site.availability)}${close}`);
