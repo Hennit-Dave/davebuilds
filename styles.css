@@ -501,6 +501,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   border-top: 1px solid var(--portfolio-color-outline-variant);
   font-size: 0.85rem; font-weight: 500; color: var(--portfolio-color-tertiary);
 }
+/* Heroicons arrows: sized to the surrounding text, coloured by it via currentColor. */
+.icon { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -0.125em; }
+.icon-md { width: 20px; height: 20px; }
 .story-arrow { display: inline-block; transition: transform var(--dur-fast) ease; }
 .story-link:hover .story-arrow { transform: translateX(4px); }
 

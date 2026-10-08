@@ -14,7 +14,7 @@ function renderStoryCards() {
         ${p.badges?.length ? `<div class="project-status">${p.badges.map(b => `<span class="status-badge">${escapeMarkup(b)}</span>`).join("")}</div>` : ""}
         <div class="project-tags">${p.stack.map(t => `<span>${escapeMarkup(t)}</span>`).join("")}</div>
         ${p.dateCompleted ? `<p class="story-card-meta">${escapeMarkup(p.readingTime)} · Completed ${escapeMarkup(p.dateCompleted)}</p>` : ""}
-        <a class="story-card-cta" href="${escapeMarkup(p.storyUrl)}">Read story <span aria-hidden="true">→</span></a>
+        <a class="story-card-cta" href="${escapeMarkup(p.storyUrl)}">Read story ${heroicon("arrow-right", "story-arrow")}</a>
       </div>
     </article>`;
   }).join("");

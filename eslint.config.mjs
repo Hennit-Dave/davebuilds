@@ -3,7 +3,7 @@ import globals from "globals";
 import html from "eslint-plugin-html";
 
 const shared = Object.fromEntries([
-  "PROJECTS", "SITE", "initReveal", "renderProjectCard", "renderProjectImage", "escapeMarkup"
+  "PROJECTS", "SITE", "initReveal", "renderProjectCard", "renderProjectImage", "escapeMarkup", "heroicon"
 ].map(name => [name, "readonly"]));
 
 export default [
@@ -20,7 +20,7 @@ export default [
   },
   {
     files: ["project-card.js"],
-    languageOptions: { globals: { renderProjectCard: "off", renderProjectImage: "off", escapeMarkup: "off" } }
+    languageOptions: { globals: { renderProjectCard: "off", renderProjectImage: "off", escapeMarkup: "off", heroicon: "off" } }
   },
   {
     files: ["data.js"],
