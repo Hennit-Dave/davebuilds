@@ -489,6 +489,16 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .inline-link:hover { border-color: var(--portfolio-color-primary); }
 
+.about-subheading {
+  font-family: var(--portfolio-font-family-mono);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+.how-i-work { margin-block: var(--space-lg); }
+.work-steps { list-style: none; padding: 0; }
+.work-steps li + li { margin-top: var(--space-sm); }
+.tools-line { font-size: 0.9rem; }
+
 /* ==========================================================================
    Page intro (used by davebuilds.html — a page header, not a full hero)
    ========================================================================== */

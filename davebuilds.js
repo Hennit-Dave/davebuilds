@@ -19,7 +19,8 @@ function renderStoryGrid() {
       <div class="story-card-body">
         <h2 class="story-card-title">${p.name}</h2>
         <p class="story-card-desc">${p.storyTeaser}</p>
-        <div class="project-tags">${p.stack.map(t => `<span>${t}</span>`).join("")}</div>
+        ${p.badges?.length ? `<div class="project-tags">${p.badges.map(b => `<span>${b}</span>`).join("")}</div>` : ""}
+          <div class="project-tags">${p.stack.map(t => `<span>${t}</span>`).join("")}</div>
         <div class="story-card-meta">
           <span>${p.readingTime}</span>
           <span class="meta-sep">·</span>

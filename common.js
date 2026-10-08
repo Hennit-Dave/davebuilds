@@ -65,6 +65,7 @@ function initMobileMenu() {
 
 // Drives any .scrub-reveal / .enter element present on the page, including
 // ones rendered dynamically — call this AFTER any data-driven render() call.
+/* exported initReveal */
 function initReveal() {
   const targets = document.querySelectorAll(".scrub-reveal, .enter");
   const io = new IntersectionObserver(entries => {
@@ -89,6 +90,9 @@ function initFooter() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-availability]").forEach(el => {
+    el.textContent = SITE.availability;
+  });
   initTheme();
   initMobileMenu();
   initFooter();

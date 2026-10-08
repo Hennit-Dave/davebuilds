@@ -14,15 +14,16 @@
 // "thumbnail" is optional — a real screenshot path (e.g. "assets/<slug>/dashboard.png").
 // When present, both card grids render it instead of the "cover" gradient placeholder.
 // ---------------------------------------------------------------------------
+/* exported PROJECTS */
 const PROJECTS = [
   {
     slug: "portfolio",
     name: "This Portfolio",
-    description: "The site you are on right now — designed and built from scratch as a place to show finished work and document the process behind it.",
+    description: "The site you are on right now — built with AI-assisted development as a place to show finished work and document the process behind it.",
     storyTeaser: "The reasoning behind the terminal-meets-canvas identity, why Projects and DaveBuilds had to stay structurally separate, and what I would still change.",
     stack: ["HTML", "CSS", "JavaScript"],
     cover: ["#283542", "#3E4A59"],
-    thumbnail: "assets/portfolio/hero.png",
+    badges: ["AI-assisted"],
     liveDemo: "#",
     github: "#",
     dateCompleted: "June 2026",
@@ -31,6 +32,7 @@ const PROJECTS = [
   },
   {
     slug: "taskflow",
+    badges: ["AI-assisted"],
     name: "TaskFlow",
     description: "A full-stack task management app with list and calendar views, subtasks, priorities, and an activity feed — built end to end on a real REST API.",
     storyTeaser: "The real stack behind a full-stack build — Express, SQLite, and JWT auth — plus the future features already scaffolded in the codebase and waiting to be wired up.",

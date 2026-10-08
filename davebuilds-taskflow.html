@@ -81,11 +81,12 @@
   <!-- ============ STORY HEADER ============ -->
   <header class="story-header container">
     <p class="eyebrow">// DaveBuilds</p>
-    <h1 class="story-title">Building TaskFlow from Scratch</h1>
+    <h1 class="story-title">Building TaskFlow with AI assistance</h1>
     <p class="story-dek">
       A full-stack task manager built specifically to learn full-stack development end to end —
       here's the real stack, the schema, and what's already scaffolded for later.
     </p>
+    <p class="body-text">AI-assisted — built with AI agents, with my direction and review.</p>
     <div class="story-meta">
       <span>Completed July 4, 2026</span>
       <span class="meta-sep">·</span>
@@ -149,13 +150,13 @@
       <section id="planning" class="story-section">
         <h2>Planning</h2>
         <p>
-          I started from the data, not the UI. Before writing a route, I sketched the schema:
+          The data model connects
           <code>users</code>, <code>tasks</code>, <code>subtasks</code>, and <code>activity_log</code>,
           each task belonging to a user, each subtask belonging to a task, both with
           <code>ON DELETE CASCADE</code> so deleting a task couldn't orphan rows elsewhere.
         </p>
         <p>
-          I also planned further ahead than the first version needed — the schema includes
+          The schema also includes
           <code>teams</code>, <code>task_assignments</code>, <code>notifications</code>,
           <code>task_attachments</code>, and <code>board_columns</code> tables from early on, even
           though none of them power a real feature yet. Planning the shape of "where this could go"
@@ -231,12 +232,8 @@
           everything else.
         </p>
         <p>
-          I also wired up Socket.IO before I had a real use for it, expecting to add live
-          notifications right away. I got the server accepting connections, then realized
-          per-user auth over sockets — matching a connection back to a JWT — was a bigger piece of
-          work than the feature justified yet. It's still in the codebase, initialized and logging
-          connections, with the actual notification logic left as a clearly marked "future" block
-          rather than something half-wired and silently broken.
+          Socket.IO is initialized and logs connections, but the notification logic remains
+          a future feature. Matching socket connections to authenticated users is still unfinished.
         </p>
       </section>
 
@@ -263,8 +260,7 @@
         <p>
           What I'd build next is already sitting in the codebase, unbuilt on purpose: team
           collaboration, task assignment, real notifications over the Socket.IO connection that's
-          already live, file attachments, a Kanban board, and an AI-suggestions table I haven't
-          written a single query against yet. Planning that surface area early, even before I
+          already live, file attachments, a Kanban board, and an unused AI-suggestions table. Planning that surface area early, even before I
           needed it, means adding each one later is a routes-and-UI problem, not a schema problem.
         </p>
       </section>
@@ -294,8 +290,8 @@
   <div class="container footer-inner">
     <div class="footer-identity">
       <p class="footer-name">Dave Hennit</p>
-      <p class="footer-legal">Enitan Oluwaseun David</p>
-      <p class="footer-tagline">✨ Thoughtfully designed by Dave Hennit</p>
+      <p class="footer-legal">David Enitan</p>
+      <p class="footer-tagline">Designed by Dave Hennit · Built with AI agents</p>
     </div>
     <div class="footer-meta">
       <p>&copy; <span id="year"></span> Dave Hennit.</p>

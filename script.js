@@ -37,6 +37,7 @@ function renderProjects() {
         <div class="project-body">
           <h3 class="project-title">${p.name}</h3>
           <p class="project-blurb">${p.description}</p>
+          ${p.badges?.length ? `<div class="project-tags">${p.badges.map(b => `<span>${b}</span>`).join("")}</div>` : ""}
           <div class="project-tags">${p.stack.map(t => `<span>${t}</span>`).join("")}</div>
           <div class="project-links">${liveLink}${codeLink}</div>
           <a class="story-link" href="${p.storyUrl}">Behind the Build <span class="story-arrow">→</span></a>
