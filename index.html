@@ -19,6 +19,11 @@
 <meta property="og:title" content="Dave Hennit — Design Engineer &amp; UI/UX Designer">
 <meta property="og:description" content="Dave Hennit (David Enitan) — Design Engineer and UI/UX Designer. I build polished apps with AI agents.">
 <meta property="og:url" content="https://davebuilds.vercel.app/">
+<meta property="og:image" content="https://davebuilds.vercel.app/assets/david-enitan.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of David Enitan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@hennitdave">
 <meta name="twitter:title" content="Dave Hennit — Design Engineer &amp; UI/UX Designer">
@@ -111,6 +116,7 @@
     </div>
 
     <div class="container hero-content">
+      <img class="hero-avatar enter" src="assets/david-enitan-ai.webp" width="800" height="800" alt="Portrait of David Enitan, AI-generated from a photo" decoding="async" fetchpriority="high">
       <h1 class="hero-heading enter">
         <span id="hero-type" data-text="Dave Hennit">Dave Hennit</span><span class="cursor-blink" aria-hidden="true">_</span>
       </h1>
@@ -194,19 +200,25 @@
         </p>
       </div>
 
-      <div class="terminal-card scrub-reveal" style="animation-delay:120ms">
-        <div class="window-chrome">
-          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-          <span class="window-title">whoami.sh</span>
-        </div>
-        <div class="terminal-body">
-          <p><span class="prompt">$</span> whoami</p>
-          <p class="out">dave_hennit — a.k.a. David Enitan</p>
-          <p><span class="prompt">$</span> cat focus.txt</p>
-          <p class="out">design engineering · UI/UX · AI-assisted builds</p>
-          <p><span class="prompt">$</span> status</p>
-          <p class="out out-accent" data-availability></p>
-          <p><span class="prompt">$</span> <span class="cursor-blink" aria-hidden="true">_</span></p>
+      <div class="about-aside">
+        <figure class="about-portrait scrub-reveal">
+          <img src="assets/david-enitan.webp" width="800" height="800" alt="Portrait of David Enitan" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="terminal-card scrub-reveal" style="animation-delay:120ms">
+          <div class="window-chrome">
+            <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+            <span class="window-title">whoami.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">$</span> whoami</p>
+            <p class="out">dave_hennit — a.k.a. David Enitan</p>
+            <p><span class="prompt">$</span> cat focus.txt</p>
+            <p class="out">design engineering · UI/UX · AI-assisted builds</p>
+            <p><span class="prompt">$</span> status</p>
+            <p class="out out-accent" data-availability></p>
+            <p><span class="prompt">$</span> <span class="cursor-blink" aria-hidden="true">_</span></p>
+          </div>
         </div>
       </div>
     </div>

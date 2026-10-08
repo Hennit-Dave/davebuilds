@@ -312,6 +312,16 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .node-dots circle { filter: drop-shadow(0 0 6px rgba(76,141,255,0.5)); }
 
 .hero-content { position: relative; z-index: 1; max-width: 760px; }
+.hero-avatar {
+  display: block;
+  width: clamp(96px, 18vw, 136px); height: auto;
+  aspect-ratio: 1;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--portfolio-color-outline-variant);
+  background: var(--portfolio-color-surface-container);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-lg);
+}
 .hero-heading {
   font-family: var(--portfolio-font-family-mono);
   font-weight: var(--portfolio-typography-display-large-font-weight);
@@ -401,6 +411,16 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .terminal-body .prompt { color: var(--portfolio-color-primary); margin-right: 8px; }
 .terminal-body .out { color: var(--portfolio-color-on-surface-variant); margin-bottom: var(--space-sm); }
 .terminal-body .out-accent { color: var(--portfolio-color-tertiary); }
+
+.about-aside { display: flex; flex-direction: column; gap: var(--space-xl); min-width: 0; }
+.about-portrait { margin: 0; min-width: 0; }
+.about-portrait img {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--portfolio-color-outline-variant);
+  background: var(--portfolio-color-surface-container);
+  box-shadow: var(--shadow-lg);
+}
 
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
