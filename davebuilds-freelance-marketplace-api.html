@@ -155,13 +155,20 @@
         <h2>Result</h2>
         <p>The API and consumer page were deployed to Vercel. My project notes record seven passing tests on main and a stable-connection check where 100 requests succeeded, followed by 429 responses with a <code>Retry-After</code> header and the standard error body.</p>
         <p>These are recorded project checks, not a fresh test run performed for this portfolio. The notes also record these input checks:</p>
-        <ol>
-          <li><code>limit=5000</code> was clamped to 100.</li>
-          <li><strong>TODO — check 2:</strong> add the request and expected validation behavior. The notes record a 400 response.</li>
-          <li><strong>TODO — check 3:</strong> add the request and expected validation behavior. The notes record a 400 response.</li>
-          <li><strong>TODO — check 4:</strong> add the request and expected validation behavior. The notes record a 400 response.</li>
-          <li><strong>TODO — check 5:</strong> add the request and expected validation behavior. The notes record a 422 response.</li>
-        </ol>
+        <div class="table-scroll" role="region" aria-label="Input check results" tabindex="0">
+          <table class="story-table">
+            <thead>
+              <tr><th scope="col">Request</th><th scope="col">Status and error code</th><th scope="col">What it shows</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>GET /api/v1/gigs?limit=5000</code></td><td>200, 100 records, <code>meta.limit</code> 100</td><td>The limit is clamped to the maximum of 100</td></tr>
+              <tr><td><code>GET /api/v1/gigs?offset=-1</code></td><td>400 <code>BAD_REQUEST</code></td><td>Rejects a negative offset</td></tr>
+              <tr><td><code>GET /api/v1/gigs?sort=unknown</code></td><td>400 <code>BAD_REQUEST</code></td><td>Rejects an unknown sort field</td></tr>
+              <tr><td><code>GET /api/v1/gigs/not-a-valid-id</code></td><td>400 <code>BAD_REQUEST</code></td><td>Rejects a malformed ID</td></tr>
+              <tr><td><code>POST /api/v1/orders</code> with only a valid-format <code>gigId</code></td><td>422 <code>VALIDATION_ERROR</code> naming <code>clientId</code></td><td>Names the missing required field</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <section class="story-section" id="differently">
         <h2>What I'd do differently</h2>

@@ -744,6 +744,17 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .story-tech-tags { margin-bottom: 0; }
 .story-links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+.table-scroll { overflow-x: auto; margin-block: var(--space-md); }
+.story-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.story-table th, .story-table td {
+  padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+  border-bottom: 1px solid var(--portfolio-color-outline-variant);
+  text-align: left; vertical-align: top;
+}
+.story-table th { font-weight: 600; color: var(--portfolio-color-on-surface-variant); }
+.story-section .story-table code { overflow-wrap: normal; white-space: nowrap; }
+.story-table :is(th, td):nth-child(2) { min-width: 15ch; }
+.story-table :is(th, td):nth-child(3) { min-width: 18ch; }
 .link-note { margin-top: var(--space-md); color: var(--portfolio-color-on-surface-variant); font-size: 0.9rem; }
 
 @media (max-width: 960px) {
